@@ -13,7 +13,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Card implements Serializable {
+public class Card implements Comparable<Card>, Serializable {
 	private static final long serialVersionUID = 4921696291909184566L;
 
 	private SuitEnum suit;
@@ -21,6 +21,18 @@ public class Card implements Serializable {
 
 	public String toString() {
 		return rack.getDescription().concat(" de ").concat(suit.getDescription());
+	}
+
+	public Boolean isStraigh(Card c) {
+		return c.getRack().getCode() == (getRack().getCode() - 1);
+	}
+
+	public Boolean isRackEqual(Card c) {
+		return c.getRack().getCode() == getRack().getCode();
+	}
+
+	public Integer getNumber() {
+		return getRack().getCode();
 	}
 
 	@Override
@@ -46,5 +58,15 @@ public class Card implements Serializable {
 		if (suit != other.suit)
 			return false;
 		return true;
+	}
+
+	public int compareTo(Card outroCard) {
+		if (this.rack.getCode() < outroCard.rack.getCode()) {
+			return 1;
+		}
+		if (this.rack.getCode() > outroCard.rack.getCode()) {
+			return -1;
+		}
+		return 0;
 	}
 }

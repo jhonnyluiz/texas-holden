@@ -8,7 +8,7 @@ import lombok.Getter;
 
 @AllArgsConstructor
 @Getter
-public class ReferenceHand {
+public class ReferenceHand implements Comparable<ReferenceHand> {
 
 	private final List<Card> cards;
 	private final HandCombinationEnum combination;
@@ -46,6 +46,16 @@ public class ReferenceHand {
 
 	public Integer getSuitCode() {
 		return cards.get(0).getSuit().getCode();
+	}
+
+	public int compareTo(ReferenceHand obj) {
+		if (this.combination.getCode() < obj.combination.getCode()) {
+			return 1;
+		}
+		if (this.combination.getCode() > obj.combination.getCode()) {
+			return -1;
+		}
+		return 0;
 	}
 
 	@Override

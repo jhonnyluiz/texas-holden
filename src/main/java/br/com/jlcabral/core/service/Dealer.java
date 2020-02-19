@@ -7,6 +7,7 @@ import java.util.List;
 import br.com.jlcabral.core.entity.Card;
 import br.com.jlcabral.core.entity.Hand;
 import br.com.jlcabral.core.entity.Player;
+import br.com.jlcabral.core.factory.DeckFactory;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -41,9 +42,11 @@ public class Dealer {
 	}
 
 	public List<Card> getCardCommon() {
-		List<Card> cards = getCardFlop();
-		cards.addAll(getCardTurn());
-		cards.addAll(getCardRiver());
-		return cards;
+//		List<Card> cards = getCardFlop();
+//		cards.addAll(getCardTurn());
+//		cards.addAll(getCardRiver());
+//		return cards;
+//		return DeckFactory.getCardsMinStraigh();
+		return DeckFactory.getCardsFullHouse();
 	}
 }
