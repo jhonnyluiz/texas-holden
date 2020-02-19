@@ -24,7 +24,11 @@ public class HandFactory {
 	public static ReferenceHand twoPair(List<Card> pairOne, List<Card> pairTwo) {
 		List<Card> list = new ArrayList<>(pairOne);
 		list.addAll(pairTwo);
-		return new ReferenceHand(list, HandCombinationEnum.TWO_PAIR);
+		return twoPair(list);
+	}
+
+	public static ReferenceHand twoPair(List<Card> pairs) {
+		return new ReferenceHand(pairs, HandCombinationEnum.TWO_PAIR);
 	}
 
 	public static ReferenceHand three(List<Card> cards) {

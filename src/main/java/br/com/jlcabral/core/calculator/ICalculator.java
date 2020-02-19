@@ -1,4 +1,4 @@
-package br.com.jlcabral.core.service;
+package br.com.jlcabral.core.calculator;
 
 import java.util.List;
 

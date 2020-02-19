@@ -52,12 +52,17 @@ public class DeckFactory {
 		return deckCut;
 	}
 
+	public static List<Card> getTwoPair() {
+		return Arrays.asList(new Card(SuitEnum.CLUBS, NumberEnum.TWO), new Card(SuitEnum.DIAMONDS, NumberEnum.TWO),
+				new Card(SuitEnum.HEARTS, NumberEnum.THREE), new Card(SuitEnum.CLUBS, NumberEnum.THREE),
+				new Card(SuitEnum.SPADES, NumberEnum.FOUR));
+	}
+	
 	public static List<Card> getCardsFullHouse() {
 		return Arrays.asList(new Card(SuitEnum.CLUBS, NumberEnum.TWO), new Card(SuitEnum.DIAMONDS, NumberEnum.TWO),
 				new Card(SuitEnum.HEARTS, NumberEnum.TWO), new Card(SuitEnum.CLUBS, NumberEnum.THREE),
 				new Card(SuitEnum.SPADES, NumberEnum.THREE));
 	}
-	
 	
 	public static List<Card> getCardsStraighFlush() {
 		return Arrays.asList(new Card(SuitEnum.HEARTS, NumberEnum.TWO), new Card(SuitEnum.HEARTS, NumberEnum.THREE),

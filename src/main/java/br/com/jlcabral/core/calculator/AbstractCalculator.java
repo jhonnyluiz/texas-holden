@@ -1,4 +1,4 @@
-package br.com.jlcabral.core.service;
+package br.com.jlcabral.core.calculator;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -69,7 +69,7 @@ public abstract class AbstractCalculator implements ICalculator {
 		}
 		return Boolean.FALSE;
 	}
-	
+
 	public Map<Integer, List<Card>> getMapEqualsNumber(List<Card> cards, Integer qtRepeat) {
 		Map<Integer, List<Card>> mapCards = cards.stream().collect(Collectors.groupingBy(Card::getNumber));
 		getCardsId(getCards()).forEach(idCard -> {
@@ -82,6 +82,15 @@ public abstract class AbstractCalculator implements ICalculator {
 
 	protected List<Integer> getCardsId(List<Card> cards) {
 		List<Integer> cardsId = cards.stream().map(c -> c.getRack().getCode()).distinct().collect(Collectors.toList());
+		Collections.sort(cardsId, Collections.reverseOrder());
+		return cardsId;
+	}
+
+	protected List<Integer> getMapCardsId(Map<Integer, List<Card>> mapCards) {
+		List<Integer> cardsId = new ArrayList<>();
+		if (mapCards.size() > 0) {
+			mapCards.forEach((i, list) -> cardsId.add(i));
+		}
 		Collections.sort(cardsId, Collections.reverseOrder());
 		return cardsId;
 	}
@@ -99,7 +108,7 @@ public abstract class AbstractCalculator implements ICalculator {
 	}
 
 	private Boolean eqHandCombination(HandCombinationEnum h1, HandCombinationEnum h2) {
-		return h1.getCode().equals(h2);
+		return h1.getCode().equals(h2.getCode());
 	}
 
 	protected Integer getQtCompleteHand() {

@@ -8,16 +8,13 @@ import br.com.jlcabral.core.entity.Card;
 import br.com.jlcabral.core.entity.Hand;
 import br.com.jlcabral.core.entity.Player;
 import br.com.jlcabral.core.factory.DeckFactory;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
 
-@Getter
-@AllArgsConstructor
 public class Dealer {
 
-	private final Hand hand;
+	private Dealer() {
+	}
 
-	public List<Card> getCardPlayer(Player player) {
+	public static List<Card> cardsPlayer(Hand hand, Player player) {
 		List<Card> cards = new ArrayList<>();
 		for (int i = 0; i < hand.getQtCardsPlayer(); i++) {
 			cards.add(hand.getCard(hand.getIndexPlayer(player) + (i * hand.getQtPlayers())));
@@ -25,7 +22,7 @@ public class Dealer {
 		return cards;
 	}
 
-	public List<Card> getCardFlop() {
+	public static List<Card> cardsFlop(Hand hand) {
 		List<Card> cards = new ArrayList<>();
 		for (int i = 0; i < hand.getQtCardsFlop(); i++) {
 			cards.add(hand.getCard(hand.getIndexFlop() + i));
@@ -33,20 +30,22 @@ public class Dealer {
 		return cards;
 	}
 
-	public List<Card> getCardTurn() {
+	public static List<Card> cardTurn(Hand hand) {
 		return Arrays.asList(hand.getCard(hand.getIndexTurn()));
 	}
 
-	public List<Card> getCardRiver() {
+	public static List<Card> cardRiver(Hand hand) {
 		return Arrays.asList(hand.getCard(hand.getIndexRiver()));
 	}
 
-	public List<Card> getCardCommon() {
-//		List<Card> cards = getCardFlop();
-//		cards.addAll(getCardTurn());
-//		cards.addAll(getCardRiver());
+	public static List<Card> cardsCommon(Hand hand) {
+//		List<Card> cards = cardsFlop(hand);
+//		cards.addAll(cardTurn(hand));
+//		cards.addAll(cardRiver(hand));
 //		return cards;
 //		return DeckFactory.getCardsMinStraigh();
+//		return DeckFactory.getCardsFullHouse();
 		return DeckFactory.getCardsFullHouse();
+//		return DeckFactory.getTwoPair();
 	}
 }
