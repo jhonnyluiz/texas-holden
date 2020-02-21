@@ -31,6 +31,12 @@ public class CalculatorHands {
 
 	public static List<AbstractCalculator> getCalculators(Hand hand, Player player) {
 		List<AbstractCalculator> calcs = new ArrayList<>();
+		calcs.add(new RoyalFlushCalculator(Dealer.cardsCommon(hand), Dealer.cardsPlayer(hand, player)));
+		calcs.add(new StrainghFlushCalculator(Dealer.cardsCommon(hand), Dealer.cardsPlayer(hand, player)));
+		calcs.add(new FourCalculator(Dealer.cardsCommon(hand), Dealer.cardsPlayer(hand, player)));
+		calcs.add(new FullHouseCalculator(Dealer.cardsCommon(hand), Dealer.cardsPlayer(hand, player)));
+		calcs.add(new FlushCalculator(Dealer.cardsCommon(hand), Dealer.cardsPlayer(hand, player)));
+		calcs.add(new StrainghCalculator(Dealer.cardsCommon(hand), Dealer.cardsPlayer(hand, player)));
 		calcs.add(new ThreeCalculator(Dealer.cardsCommon(hand), Dealer.cardsPlayer(hand, player)));
 		calcs.add(new TwoPairCalculator(Dealer.cardsCommon(hand), Dealer.cardsPlayer(hand, player)));
 		calcs.add(new PairCalculator(Dealer.cardsCommon(hand), Dealer.cardsPlayer(hand, player)));

@@ -13,6 +13,10 @@ public class HandFactory {
 	private HandFactory() {
 	}
 
+	public static ReferenceHand to(List<Card> cards, HandCombinationEnum combination) {
+		return new ReferenceHand(cards, combination);
+	}
+
 	public static ReferenceHand highCard(Card c) {
 		return new ReferenceHand(Arrays.asList(c), HandCombinationEnum.HIGH_CARD);
 	}

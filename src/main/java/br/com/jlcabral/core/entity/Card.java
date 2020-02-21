@@ -34,6 +34,10 @@ public class Card implements Comparable<Card>, Serializable {
 	public Integer getNumber() {
 		return getRack().getCode();
 	}
+	
+	public Integer getNaipe() {
+		return getSuit().getCode();
+	}
 
 	@Override
 	public int hashCode() {

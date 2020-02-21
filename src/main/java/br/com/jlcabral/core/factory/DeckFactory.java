@@ -70,6 +70,18 @@ public class DeckFactory {
 				new Card(SuitEnum.HEARTS, NumberEnum.SIX));
 	}
 	
+	public static List<Card> getCardsRoyalStraighFlush() {
+		return Arrays.asList(new Card(SuitEnum.HEARTS, NumberEnum.ACE), new Card(SuitEnum.HEARTS, NumberEnum.KING),
+				new Card(SuitEnum.HEARTS, NumberEnum.QUEEN), new Card(SuitEnum.HEARTS, NumberEnum.JACK),
+				new Card(SuitEnum.HEARTS, NumberEnum.TEN));
+	}
+	
+	public static List<Card> getCards4RoyalStraighFlush() {
+		return Arrays.asList(new Card(SuitEnum.SPADES, NumberEnum.TWO), new Card(SuitEnum.HEARTS, NumberEnum.KING),
+				new Card(SuitEnum.HEARTS, NumberEnum.QUEEN), new Card(SuitEnum.HEARTS, NumberEnum.JACK),
+				new Card(SuitEnum.HEARTS, NumberEnum.TEN));
+	}
+	
 	public static List<Card> getCardsFlush() {
 		return Arrays.asList(new Card(SuitEnum.HEARTS, NumberEnum.TWO), new Card(SuitEnum.HEARTS, NumberEnum.THREE),
 				new Card(SuitEnum.HEARTS, NumberEnum.NINE), new Card(SuitEnum.HEARTS, NumberEnum.ACE),

@@ -43,9 +43,14 @@ public class Dealer {
 //		cards.addAll(cardTurn(hand));
 //		cards.addAll(cardRiver(hand));
 //		return cards;
+		return DeckFactory.getCardsRoyalStraighFlush();
+//		return DeckFactory.getCards4RoyalStraighFlush();
+//		return DeckFactory.getCardsStraighFlush();
 //		return DeckFactory.getCardsMinStraigh();
+//		return DeckFactory.getCardsFlush();
+//		return DeckFactory.getCardsStraigh();
 //		return DeckFactory.getCardsFullHouse();
-		return DeckFactory.getCardsFullHouse();
+//		return DeckFactory.getCardsFullHouse();
 //		return DeckFactory.getTwoPair();
 	}
 }

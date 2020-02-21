@@ -80,6 +80,16 @@ public abstract class AbstractCalculator implements ICalculator {
 		return mapCards;
 	}
 
+	public Map<Integer, List<Card>> getMapEqualsSuit(List<Card> cards) {
+		Map<Integer, List<Card>> mapCards = cards.stream().collect(Collectors.groupingBy(Card::getNaipe));
+		getMapCardsId(mapCards).forEach(idCard -> {
+			if (mapCards.get(idCard).size() < 5) {
+				mapCards.remove(idCard);
+			}
+		});
+		return mapCards;
+	}
+
 	protected List<Integer> getCardsId(List<Card> cards) {
 		List<Integer> cardsId = cards.stream().map(c -> c.getRack().getCode()).distinct().collect(Collectors.toList());
 		Collections.sort(cardsId, Collections.reverseOrder());
