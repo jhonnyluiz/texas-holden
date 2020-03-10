@@ -40,6 +40,7 @@ public class StrainghFlushCalculator extends StrainghCalculator {
 	}
 
 	protected ReferenceHand findAceSuitReturnHand(List<Card> cardsStraingh, List<Card> cardsSuit) {
+		System.out.println("findAceSuitReturnHand true");
 		Optional<Card> ace = cardsSuit.stream().filter(c -> c.getNumber().equals(ACE.getCode())).findFirst();
 		if (ace.isPresent()) {
 			addIfLast(cardsStraingh, ace.get());

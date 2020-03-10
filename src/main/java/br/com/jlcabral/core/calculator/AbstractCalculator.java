@@ -7,11 +7,11 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-import br.com.jlcabral.core.ObjUtils;
 import br.com.jlcabral.core.entity.Card;
 import br.com.jlcabral.core.entity.ReferenceHand;
 import br.com.jlcabral.core.enumerated.HandCombinationEnum;
 import br.com.jlcabral.core.factory.HandFactory;
+import br.com.jlcabral.core.utils.ObjUtils;
 
 public abstract class AbstractCalculator implements ICalculator {
 
@@ -20,7 +20,7 @@ public abstract class AbstractCalculator implements ICalculator {
 	private List<ReferenceHand> referHands;
 
 	public AbstractCalculator(List<Card> cardCommon, List<Card> cardPlayer) {
-		cards = new ArrayList<>();
+		cards = new ArrayList<Card>();
 		cards.addAll(cardPlayer);
 		cards.addAll(cardCommon);
 		Collections.sort(cards);
@@ -42,8 +42,8 @@ public abstract class AbstractCalculator implements ICalculator {
 	}
 
 	private List<Card> getCardsAvailable(List<Card> removeCardsHand) {
-		List<Card> cardsAvailable = new ArrayList<>();
-		cards.forEach(c -> {
+		List<Card> cardsAvailable = new ArrayList<Card>();
+		cards.forEach((Cardc) -> {
 			Optional<Card> card = removeCardsHand.stream().filter(rc -> rc.equals(c)).findFirst();
 			if (!card.isPresent()) {
 				cardsAvailable.add(c);

@@ -1,4 +1,4 @@
-package br.com.jlcabral.core;
+package br.com.jlcabral.core.utils;
 
 public class ObjUtils {
 	

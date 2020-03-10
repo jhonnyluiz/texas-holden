@@ -2,7 +2,7 @@ package br.com.jlcabral.core.entity;
 
 import java.io.Serializable;
 
-import br.com.jlcabral.core.ObjUtils;
+import br.com.jlcabral.core.utils.ObjUtils;
 
 public abstract class AbstractEntity implements Serializable {
 	private static final long serialVersionUID = -3236542868087398530L;
