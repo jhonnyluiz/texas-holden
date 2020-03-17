@@ -22,10 +22,11 @@ public class CalculatorHands {
 	}
 
 	public static void calcHands(Hand hand) {
+		List<Optional<List<ReferenceHand>>> handPlayers = new ArrayList<>();
 		for (Player player : hand.getPlayers()) {
-			Optional<List<ReferenceHand>> l = getCalculators(hand, player).stream()
-					.map(calc -> calcHandPlayer(hand, player, calc)).filter(list -> !list.isEmpty()).findFirst();
-			System.out.println("Player:" + player.getId() + " " +(l.isPresent() ? l.get() : ""));
+			handPlayers.add(getCalculators(hand, player).stream()
+					.map(calc -> calcHandPlayer(hand, player, calc)).filter(list -> !list.isEmpty()).findFirst());
+//			System.out.println("Player:" + player.getId() + " " +(l.isPresent() ? l.get() : ""));
 		}
 	}
 

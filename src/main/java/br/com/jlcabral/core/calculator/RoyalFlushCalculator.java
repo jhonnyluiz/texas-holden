@@ -21,8 +21,6 @@ public class RoyalFlushCalculator extends StrainghFlushCalculator {
 		if (cardsSuit.size() > 0) {
 			List<Integer> mapIds = getMapCardsId(cardsSuit);
 			ReferenceHand hand = getHand(cardsSuit.get(mapIds.get(0)));
-			System.out.println(hand);
-			System.out.println(ObjUtils.isNotNull(hand) && isCardAce(hand.getCards()));
 			if(ObjUtils.isNotNull(hand) && isCardAce(hand.getCards())) {
 				addHand(HandFactory.royal(hand.getCards()));
 			}

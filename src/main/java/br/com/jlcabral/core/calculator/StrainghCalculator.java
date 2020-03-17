@@ -33,7 +33,6 @@ public class StrainghCalculator extends AbstractCalculator {
 	}
 
 	protected ReferenceHand getStraingh(List<Card> cardsStraingh) {
-		System.out.println("getStraingh true");
 		if (cardsStraingh.size() > 4) {
 			return HandFactory.to(cardsStraingh.subList(0, 4), getCombinationCalc());
 		}

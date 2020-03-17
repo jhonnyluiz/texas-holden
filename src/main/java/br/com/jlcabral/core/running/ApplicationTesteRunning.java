@@ -3,15 +3,12 @@ package br.com.jlcabral.core.running;
 import java.util.List;
 
 import br.com.jlcabral.core.calculator.CalculatorHands;
-import br.com.jlcabral.core.calculator.PairCalculator;
 import br.com.jlcabral.core.entity.Hand;
 import br.com.jlcabral.core.entity.Player;
 import br.com.jlcabral.core.entity.Table;
 import br.com.jlcabral.core.entity.Tournament;
 import br.com.jlcabral.core.enumerated.TypeModelPokerEnum;
 import br.com.jlcabral.core.factory.PlayerFactory;
-import br.com.jlcabral.core.service.Calculator;
-import br.com.jlcabral.core.service.Dealer;
 
 public class ApplicationTesteRunning {
 
@@ -26,11 +23,13 @@ public class ApplicationTesteRunning {
 		// showHandPlayers(d, players);
 		// showCard(Dealer d);
 //		showHandPlayer(d, hand, players, 0);
-		
+
 //		PairCalculator pair = new PairCalculator(d.getCardCommon(), d.getCardPlayer(players.get(0)));
 //		pair.calc();
 //		System.out.println(pair.getReferHands());
-		
+//		System.out.println(Dealer.cardsFlop(hand));
+//		System.out.println(Dealer.cardTurn(hand));
+//		System.out.println(Dealer.cardRiver(hand));
 		CalculatorHands.calcHands(hand);
 
 	}

@@ -43,7 +43,7 @@ public abstract class AbstractCalculator implements ICalculator {
 
 	private List<Card> getCardsAvailable(List<Card> removeCardsHand) {
 		List<Card> cardsAvailable = new ArrayList<Card>();
-		cards.forEach((Cardc) -> {
+		cards.forEach((Card c) -> {
 			Optional<Card> card = removeCardsHand.stream().filter(rc -> rc.equals(c)).findFirst();
 			if (!card.isPresent()) {
 				cardsAvailable.add(c);

@@ -7,7 +7,6 @@ import java.util.List;
 import br.com.jlcabral.core.entity.Card;
 import br.com.jlcabral.core.entity.Hand;
 import br.com.jlcabral.core.entity.Player;
-import br.com.jlcabral.core.factory.DeckFactory;
 
 public class Dealer {
 
@@ -39,11 +38,11 @@ public class Dealer {
 	}
 
 	public static List<Card> cardsCommon(Hand hand) {
-//		List<Card> cards = cardsFlop(hand);
-//		cards.addAll(cardTurn(hand));
-//		cards.addAll(cardRiver(hand));
-//		return cards;
-		return DeckFactory.getCardsRoyalStraighFlush();
+		List<Card> cards = cardsFlop(hand);
+		cards.addAll(cardTurn(hand));
+		cards.addAll(cardRiver(hand));
+		return cards;
+//		return DeckFactory.getCardsRoyalStraighFlush();
 //		return DeckFactory.getCards4RoyalStraighFlush();
 //		return DeckFactory.getCardsStraighFlush();
 //		return DeckFactory.getCardsMinStraigh();
